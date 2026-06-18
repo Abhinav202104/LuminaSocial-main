@@ -1,4 +1,4 @@
-import 'dotenv/config';          // Loads .env BEFORE any other imports
+import 'dotenv/config';
 import express from "express";
 import cors from "cors";
 import path from "path";
@@ -15,41 +15,32 @@ const PORT = process.env.PORT || 4000;
 const app = express();
 const server = createServer(app);
 
-// ========== Socket.IO with dynamic CORS ==========
+// ========== Allowed origins ==========
+const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'https://lumina-social-main.vercel.app'
+];
+
+// ========== Socket.IO with CORS ==========
 const io = new Server(server, {
   cors: {
-    origin: function (origin, callback) {
-      // Allow requests from any localhost port
-      if (!origin || origin.startsWith('http://localhost:')) {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: ["GET", "POST"]
+    origin: allowedOrigins,
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
-// Connect to MongoDB
 dbConnect();
 
-// ========== Middleware ==========
 app.use(express.json());
 
-// ========== Express CORS (dynamic) ==========
+// ========== Express CORS ==========
 app.use(cors({
-  origin: function (origin, callback) {
-    // Allow requests from any localhost port
-    if (!origin || origin.startsWith('http://localhost:')) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-  },
+  origin: allowedOrigins,
   credentials: true,
 }));
 
-// Serve uploaded files
 app.use("/uploads", express.static(path.join(process.cwd(), "uploads")));
 
 // ========== Routes ==========
