@@ -1,5 +1,5 @@
 <h1 align="center" style="color:"#faac00";">☀️ LuminaSocial</h1>
-https://lumina-social-main.vercel.app/login
+
 <p align="center">
   <strong>A modern, full-stack social interaction web platform</strong><br />
   Built using the MERN stack with real-time features and a clean, white-dominant UI accented by bright yellow.
@@ -9,7 +9,7 @@ https://lumina-social-main.vercel.app/login
 
 ## ⚡ Overview
 
-**LuminaSocial** is a scalable, secure, and interactive social media web app built from scratch using the **MERN stack**. It offers core features like posting, real-time messaging, profile customization, and content discovery — all wrapped in a clean and responsive UI.
+**LuminaSocial** is a scalable, secure, and interactive social media web app built from scratch using the **MERN stack**. It offers core features like posting, real-time messaging, profile customization, and content discovery — all wrapped in a clean and responsive UI.LINK(https://lumina-social-main.vercel.app/login)
 
 ---
 
