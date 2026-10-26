@@ -96,11 +96,6 @@ LuminaSocial/
 - **Mostly optimal code** throughout
 
 ---
-## 🔗 Repository
-
-**GitHub:** [github.com/Nikhil2253/LuminaSocial](https://github.com/Nikhil2253/LuminaSocial)
-
----
 
 ## 🙋‍♂️ About Me
 
